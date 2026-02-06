@@ -1,3 +1,7 @@
+# Based on https://github.com/trentm/slack-lite/tree/v1.0.0
+# Copyright Elasticsearch B.V., Trent Mick
+# SPDX-License-Identifier: Apache-2.0
+
 # Post a succinct slack message for issue and PR events.
 #
 # Configuration:
@@ -8,8 +12,6 @@
 #    permission.
 # 3. Optionally tweak the `if:` and `on:` sections below to control which issue
 #    and PR events are skipped.
-#
-# (Based on https://github.com/trentm/slack-lite/tree/v1.0.0)
 
 name: slack-lite
 

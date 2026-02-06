@@ -45,7 +45,7 @@ This is why I say slack-lite is "an 80/20% solution".
 
 ## How slack-lite works
 
-Slack-lite is a GitHub Actions workflow that you put in each of the repositories from which you want notifications. Copy the template file here, fill in a few details, and add to your repository. (Yes, I could probably create a re-usable GitHub Action, but I haven't done so.) Because it is a workflow in *your* repo, you can configure many of the notification details.
+Slack-lite is a GitHub Actions workflow that you put in each of the repositories from which you want notifications. Copy the template file from here, fill in a few details, and add to your repository. (Yes, I could probably create a re-usable GitHub Action, but I haven't done so.) Because it is a workflow in *your* repo, you can configure it how you like.
 
 1. The workflow runs on issue and pull-request (PR) events, e.g.:
 
@@ -57,21 +57,21 @@ Slack-lite is a GitHub Actions workflow that you put in each of the repositories
         types: [opened, ready_for_review, reopened, closed]
     ```
 
-2. It uses some inline Python code to massage the GitHub event JSON into a nice-enough Slack notification (a payload for the [Slack `chat.postMessage` API](https://docs.slack.dev/reference/methods/chat.postMessage/):
-    https://github.com/trentm/slack-lite/blob/d120621bfa176928636e01d6139b69afd1e4e2db/slack-lite-template.yml#L40-L122
+2. It uses some inline Python code to massage the GitHub event JSON into a nice-enough Slack notification (a payload for the [Slack `chat.postMessage` API](https://docs.slack.dev/reference/methods/chat.postMessage/)):
+    https://github.com/trentm/slack-lite/blob/d120621bfa176928636e01d6139b69afd1e4e2db/slack-lite.template.yml#L40-L122
 
 3. It uses Slack's [`slackapi/slack-github-action`](https://github.com/slackapi/slack-github-action) to send the message.
 
 
 ## How to setup slack-lite
 
-1. Copy the template workflow file to ".github/workflows/slack-lite.yml" (or whatever workflow name you like) in your repository.
+1. Copy the [template workflow file](./slack-lite.template.yml) to ".github/workflows/slack-lite.yml" (or whatever workflow name you like) in your repository.
 
-2. Configuration:
+2. Configuration (see "TODO" comments in the template):
 
     - Set the `SLACK_CHANNEL` value to your channel name.
     - Add a `SLACK_BOT_TOKEN` secret to your repo. This is the "Bot User OAuth Token" from the "OAuth & Permissions" section of your Slack App (https://api.slack.com/apps). The token must have the `chat:write` permission.
-    - Optionally tweak the `on:` and `if:` blocks (see "TODO" comments) in "slack-lite.yml" as desired.
+    - Optionally tweak the `on:` and `if:` blocks in "slack-lite.yml" as desired.
 
     For example, here is the slack-lite.yml file in a repository I use at work: https://github.com/elastic/elastic-otel-node/blob/main/.github/workflows/slack-lite.yml
 
@@ -128,11 +128,11 @@ You've setup slack-lite and now you want to go back to the way you had it before
     /github subscribe my-org/my-other-repo commits
     ```
 
-# Contributing
+## Contributing
 
 While contributions are great and I appreciate constructive feedback, please be aware that this is not a project I focus on. I likely won't be very responsive to issues and pull requests. Please feel free to fork and/or copy the workflow here and use as a template for your own needs.
 
-# License
+## License
 
 Copyright Elasticsearch B.V., Trent Mick<br>
 SPDX-License-Identifier: Apache-2.0
