@@ -58,6 +58,7 @@ Slack-lite is a GitHub Actions workflow that you put in each of the repositories
     ```
 
 2. It uses some inline Python code to massage the GitHub event JSON into a nice-enough Slack notification (a payload for the [Slack `chat.postMessage` API](https://docs.slack.dev/reference/methods/chat.postMessage/)):
+
     https://github.com/trentm/slack-lite/blob/d120621bfa176928636e01d6139b69afd1e4e2db/slack-lite.template.yml#L40-L122
 
 3. It uses Slack's [`slackapi/slack-github-action`](https://github.com/slackapi/slack-github-action) to send the message.
