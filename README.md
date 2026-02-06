@@ -1,6 +1,6 @@
 # slack-lite
 
-GitHub PR notifications in Slack *on a diet*. Skip notifications for dependabot PRs (if you like), and
+GitHub PR notifications in Slack *on a diet*. **Skip notifications for dependabot PRs** (if you like), and
 
 <details>
 <summary>turn verbose notifications like these:</summary>
@@ -10,7 +10,7 @@ GitHub PR notifications in Slack *on a diet*. Skip notifications for dependabot 
 </details>
 
 <details open>
-<summary>into this:</summary>
+<summary>**into more succinct notifications, like this:**</summary>
 
 ![succinct slack-lite notifications](./img/succinct-slack-lite.png)
 
