@@ -10,7 +10,7 @@ GitHub PR notifications in Slack *on a diet*. **Skip notifications for dependabo
 </details>
 
 <details open>
-<summary>**into more succinct notifications, like this:**</summary>
+<summary><strong>into more succinct notifications, like this:</strong></summary>
 
 ![succinct slack-lite notifications](./img/succinct-slack-lite.png)
 
