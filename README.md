@@ -30,7 +30,7 @@ The GitHub + Slack integration does **not** support:
 
 (The ability to skip some notifications based on user or label or whatever, specifically for dependabot, used to be the highest requested feature for the integration back [when it was open source](https://web.archive.org/web/20220823222940/https://github.com/integrations/slack/issues/951). The idea of using a GH Actions workflow for Slack notifications came from that thread, before it was deleted.)
 
-At my work, I found that conversation between humans in Slack dev channels (those with GH notifications for a number of repos) was getting drowned out by GitHub notifications. Want to see what co-workers in another time zone were discussing last night? You need to scroll back through pages of PRs, many of them from bots like dependabot. It really broke up natural conversation.
+At my work, I found that **conversation between humans** in Slack dev channels (those with GH notifications for a number of repos) **was getting drowned out** by GitHub notifications. Want to see what co-workers in another time zone were discussing last night? You need to scroll back through pages of PRs, many of them from bots like dependabot. It really broke up natural conversation.
 
 **"Slack-lite" is an 80/20% solution to reduce the volume and size of GitHub issue/PR notifications** so that a Slack channel can have meaningful *conversation* without getting drowned out.
 
