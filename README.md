@@ -95,7 +95,7 @@ Slack-lite is a GitHub Actions workflow that you put in each of the repositories
     issues, pulls, commits, releases, deployments
     ```
 
-    Now, unsubscribe from the notification you no longer need using `/github unsubscribe owner/repo [event]` (see https://docs.github.com/en/integrations/how-tos/slack/customize-notifications). For example:
+    Now, unsubscribe from the notifications you no longer need, using `/github unsubscribe owner/repo [event]` (see https://docs.github.com/en/integrations/how-tos/slack/customize-notifications). For example:
 
     ```
     /github unsubscribe my-org/my-repo issues
