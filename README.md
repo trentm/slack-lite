@@ -1,11 +1,21 @@
 # slack-lite
 
-GitHub PR notifications in Slack *on a diet*.
-Turn this:
+GitHub PR notifications in Slack *on a diet*. Skip notifications for dependabot PRs (if you like), and
+
+<details>
+<summary>turn verbose notifications like these:</summary>
+
 ![overly verbose GitHub + Slack integration notifications](./img/verbose-github-slack-integration.png)
 
-into this:
+</details>
+
+<details open>
+<summary>into this:</summary>
+
 ![succinct slack-lite notifications](./img/succinct-slack-lite.png)
+
+</details>
+
 
 ## Why slack-lite?
 
@@ -47,9 +57,8 @@ Slack-lite is a GitHub Actions workflow that you put in each of the repositories
         types: [opened, ready_for_review, reopened, closed]
     ```
 
-2. It uses some inline Python code to massage the GitHub event JSON into a nice-enough Slack notification (a payload for the [Slack `chat.postMessage` API](https://docs.slack.dev/reference/methods/chat.postMessage/)
-
-    TODO: link to Prepare Slack message step
+2. It uses some inline Python code to massage the GitHub event JSON into a nice-enough Slack notification (a payload for the [Slack `chat.postMessage` API](https://docs.slack.dev/reference/methods/chat.postMessage/):
+    https://github.com/trentm/slack-lite/blob/d120621bfa176928636e01d6139b69afd1e4e2db/slack-lite-template.yml#L40-L122
 
 3. It uses Slack's [`slackapi/slack-github-action`](https://github.com/slackapi/slack-github-action) to send the message.
 
@@ -125,6 +134,6 @@ While contributions are great and I appreciate constructive feedback, please be 
 
 # License
 
-Copyright Elasticsearch B.V., Trent Mick  
+Copyright Elasticsearch B.V., Trent Mick<br>
 SPDX-License-Identifier: Apache-2.0
 
