@@ -26,6 +26,9 @@ on:
   pull_request_target:
     types: [opened, ready_for_review, reopened, closed]
 
+permissions:
+  contents: read
+
 jobs:
   slack-lite:
     # TODO: Optionally change this if-block for your case.
