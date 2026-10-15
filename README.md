@@ -69,7 +69,8 @@ Slack-lite is a GitHub Actions workflow that you put in each of the repositories
 
 ## On GitHub's default `pull_request_target` policy
 
-Slack-lite uses the `pull_request_target` GitHub event. It must use this event, instead of `pull_request`, otherwise a PR could change the ".github/workflows/slack-lite.yml" and completely control the message sent to Slack -- e.g. for sending phishing links.
+Slack-lite uses the `pull_request_target` GitHub event.
+It must use this event, instead of `pull_request`, otherwise a PR could change ".github/workflows/slack-lite.yml" and completely control the message sent to Slack -- e.g. for sending phishing links.
 
 GitHub has a default "Actions policy" for `pull_request_target` events that will *block* them on public repositories.
 Before November 2, 2026, this policy is in "evaluate mode".
