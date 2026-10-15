@@ -23,6 +23,10 @@ env:
 on:
   issues:
     types: [opened, reopened, closed]
+  # Note: This must be 'pull_request_target' and *not* 'pull_request'.
+  # If 'pull_request' is used, then the workflow runs using the content in
+  # the pull request itself, which means the submitter has full control of
+  # the slack message.
   pull_request_target:
     types: [opened, ready_for_review, reopened, closed]
 

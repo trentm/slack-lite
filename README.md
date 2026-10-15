@@ -53,6 +53,10 @@ Slack-lite is a GitHub Actions workflow that you put in each of the repositories
     on:
       issues:
         types: [opened, reopened, closed]
+      # Note: This must be 'pull_request_target' and *not* 'pull_request'.
+      # If 'pull_request' is used, then the workflow runs using the content in
+      # the pull request itself, which means the submitter has full control of
+      # the slack message.
       pull_request_target:
         types: [opened, ready_for_review, reopened, closed]
     ```
@@ -63,6 +67,25 @@ Slack-lite is a GitHub Actions workflow that you put in each of the repositories
 
 3. It uses Slack's [`slackapi/slack-github-action`](https://github.com/slackapi/slack-github-action) to send the message.
 
+### On GitHub's default `pull_request_target` policy
+
+Slack-lite uses the `pull_request_target` GitHub event. It must use this event, instead of `pull_request`, otherwise a PR could change the ".github/workflows/slack-lite.yml" and completely control the message sent to Slack -- e.g. for sending phishing links.
+
+GitHub has a default "Actions policy" for `pull_request_target` events that will *block* them on public repositories.
+Before November 2, 2026, this policy is in "evaluate mode".
+This means it will *warn* about these events, but not yet block them.
+The warning looks like this:
+
+![GitHub Actions policy warning](./img/github-policy-warning.png)
+
+> [!IMPORTANT]
+> Starting November 2, 2026, GitHub will **enforce** this default Actions policy,
+> such that `pull_request_target` events on public repos will be **blocked** from triggering.
+
+If this impacts you, then I believe you must create an Actions policy for your repository or organization which permits the `pull_request_target` event.
+See [GitHub docs on Actions policies](https://docs.github.com/en/actions/concepts/about-actions-policies)
+and [GitHub notes on securely using `pull_request_target`](https://docs.github.com/en/actions/reference/security/securely-using-pull_request_target#default-policy-for-pull_request_target).
+If your repo has other workflows which use `pull_request_target`, **you must understand the risks**.
 
 ## How to setup slack-lite
 
