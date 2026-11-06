@@ -1,4 +1,4 @@
-# Based on https://github.com/trentm/slack-lite/tree/v1.0.0
+# Based on https://github.com/trentm/slack-lite/
 # Copyright Elasticsearch B.V., Trent Mick
 # SPDX-License-Identifier: Apache-2.0
 
@@ -27,7 +27,7 @@ on:
   # If 'pull_request' is used, then the workflow runs using the content in
   # the pull request itself, which means the submitter has full control of
   # the slack message.
-  pull_request_target:
+  pull_request_target: # zizmor: ignore[dangerous-triggers] PR code is not checked-out or run. PR-controlled values (title, ...) are only read as data from the event JSON.
     types: [opened, ready_for_review, reopened, closed]
 
 permissions:
@@ -131,7 +131,7 @@ jobs:
             f.write("payload={}".format(json.dumps(payload)))
 
       - name: Post Slack message
-        uses: slackapi/slack-github-action@v2.1.1
+        uses: slackapi/slack-github-action@dcb1066f776dd043e64d0e8ba94ca15cc7e1875d # v4.0.0
         with:
           method: chat.postMessage
           token: ${{ secrets.SLACK_BOT_TOKEN }}
