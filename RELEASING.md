@@ -6,7 +6,6 @@ The current setup process is to *copy* the template file from this repo, so ther
 
 1.  Update:
     - CHANGELOG.md
-    - the "Based on" ref in "slack-lite-template.yml"
     and commit.
 
 2.  Tag the repo.
