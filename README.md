@@ -61,7 +61,7 @@ Slack-lite is a GitHub Actions workflow that you put in each of the repositories
         types: [opened, ready_for_review, reopened, closed]
     ```
 
-2. It uses some inline Python code to massage the GitHub event JSON into a nice-enough Slack notification (a payload for the [Slack `chat.postMessage` API](https://docs.slack.dev/reference/methods/chat.postMessage/)):
+2. It uses some inline Python code to massage the GitHub event JSON into a nice-enough Slack notification (a payload for the [Slack `chat.postMessage` API](https://docs.slack.dev/reference/methods/chat.postMessage/)), e.g.:
 
     https://github.com/trentm/slack-lite/blob/270f16f32cd0264fc8a600d2dd6ff201a0e1dc94/slack-lite.template.yml#L42-L124
 
